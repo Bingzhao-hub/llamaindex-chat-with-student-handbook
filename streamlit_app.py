@@ -3,11 +3,8 @@ from copilot import Copilot
 import os
 ### set openai key, first check if it is in environment variable, if not, check if it is in streamlit secrets, if not, raise error
 
-
-st.title("Chat with Columbia Copilot")
-st.write(
-    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
-)
+st.title("💬 Chat with Columbia Copilot")
+st.caption("🚀 A Streamlit chatbot powered by OpenAI")
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
@@ -19,7 +16,7 @@ if not openai_api_key:
 else:
     if "messages" not in st.session_state.keys():  # Initialize the chat messages history
         st.session_state.messages = [
-            {"role": "assistant", "content": "I am Columbia Copilot, your personal assistant. You can ask me about Columbia University."}
+            {"role": "assistant", "content": "I am Columbia Copilot, your personal assistant. You can ask me about Columbia University. Especially, I am trained to be an expert of the Marketing Division at Columbia Business School."}
         ]
 
     @st.cache_resource
@@ -32,7 +29,7 @@ else:
         st.session_state.chat_copilot = load_copilot()
 
     if prompt := st.chat_input(
-        "Ask a question"
+        "Introduce the Marketing Division at Columbia Business School"
     ):  # Prompt for user input and save to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
 
