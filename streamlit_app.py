@@ -5,6 +5,7 @@ import os
 
 st.title("💬 Chat with Columbia Copilot")
 st.caption("🚀 A Streamlit chatbot powered by OpenAI")
+st.caption("[View the source code](https://github.com/Bingzhao-hub/llamaindex-chat-with-student-handbook)")
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
